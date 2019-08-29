@@ -240,6 +240,15 @@ C:\Users\Ulises\Desktop\Ulises\EditorGrafos\Grafos\EDITOR DE GRAFOS FINAL_ENRIQU
 C:\Users\Ulises\Desktop\EditordeGrafos_ESP\EditordeGrafos\bin\Debug\Editor De Grafos.exe.config
 C:\Users\Ulises\Desktop\EditordeGrafos_ESP\EditordeGrafos\obj\Debug\Editor De Grafos.exe
 C:\Users\Ulises\Desktop\EditordeGrafos_ESP\EditordeGrafos\obj\Debug\Editor De Grafos.pdb
-C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditordeGrafos\bin\Debug\Editor De Grafos.exe.config
-C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditordeGrafos\obj\Debug\Editor De Grafos.exe
-C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditordeGrafos\obj\Debug\Editor De Grafos.pdb
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\bin\Debug\Editor De Grafos.exe.config
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\Editor De Grafos.exe
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\Editor De Grafos.pdb
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\EditordeGrafos.csprojResolveAssemblyReference.cache
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\EditordeGrafos.Form1.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\EditordeGrafos.Form2.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\EditordeGrafos.Form3.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\EditordeGrafos.Form5.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\EditordeGrafos.Properties.Resources.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\EditordeGrafos.csproj.GenerateResource.Cache
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\bin\Debug\Editor De Grafos.exe
+C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\bin\Debug\Editor De Grafos.pdb
