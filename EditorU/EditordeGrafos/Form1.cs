@@ -19,7 +19,7 @@ namespace EditordeGrafos
         Grafo grafo,g2,gis;
         Point p;
        // int ckwn;
-        int Dijks;
+       
         int flo;
         Point pm;
         Arista a;
@@ -39,12 +39,13 @@ namespace EditordeGrafos
         Timer time;
         Arista arista;
         List<NodoP> CCE;
-        List<string[]> camino;
+       // List<string[]> camino;
         bool tck;
         bool bandcam;
         int icam;
         int numero;
-        bool coloreando;
+       
+        int bandComplemento = 0;//
         Color resp;
         /// <summary>
         /// From principal 
@@ -61,9 +62,9 @@ namespace EditordeGrafos
             numero = 0;
             tck = false;
             CCE = new List<NodoP>();
-            Dijks= 0;
+          
             flo = 1;
-            coloreando = false;
+           
             resp = Color.White;
             g2 = new Grafo();
             a = new Arista();
@@ -157,8 +158,6 @@ namespace EditordeGrafos
                     des = (NodoP)grafo.Find(delegate(NodoP a) { if (e.Location.X > a.POS.X-15 && e.Location.X < a.POS.X + 30 && e.Location.Y > a.POS.Y-15 && e.Location.Y < a.POS.Y + 30)return true; else return false; });
                     if (des != null && nu != null)
                     {
-                       // toolStrip4.Visible = true;
-                        //ItemMetodos.Visible = true;
                         if (nu.insertaRelacion(des,grafo.Aristas.Count))
                         {
                             a = new Arista(tipoarista, nu, des, "e" + grafo.Aristas.Count.ToString());
@@ -174,11 +173,7 @@ namespace EditordeGrafos
                             des.GradoExterno++;
                             nu.GradoInterno++; 
                         }
-                        if (coloreando == true)
-                        {
-                            grafo.colorear();
-
-                        }
+                      
                         grafo.pinta(au);
                         band = false;
                         nu = null;
@@ -354,93 +349,7 @@ namespace EditordeGrafos
                      f.Show();
                      grafo.desseleccionar();
                 break;
-                case "caminoEulerInicio":
-                if (destin != null && orig != null)
-                {
-                    List<NodoP> x = new List<NodoP>();
-                    g2 = new Grafo(grafo);
-                    if (Dijks != 1 && flo != 1)
-                    {
-                        List<NodoP> caminito = new List<NodoP>();
-                        grafo.Circuito(orig, destin, grafo.Aristas.Count, caminito);
-                        caminito.Add(orig);
-                        if (caminito.Count == 0)
-                            MessageBox.Show("No Hay camino euleriano entre esos vertices");
-                        else
-                        {
-
-                            time.Interval = 300;
-                            time.Enabled = true;
-
-
-                            for (int ci = 0; ci < 15; ci++)
-                            {
-                                Arista ari = new Arista(); ;
-                                Grafo g3 = new Grafo(g2);
-                                g3.Aristas.Clear();
-                                foreach (NodoP rel in g3)
-                                {
-                                    rel.relaciones.Clear();
-                                }
-                                for (int i = caminito.Count - 1; i >= 0; i--)
-                                {
-                                    if (i > 0)
-                                    {
-                                        g3.Find(delegate(NodoP d) { if (d.NOMBRE == caminito[i].NOMBRE)return true; else return false; }).insertaRelacion(g3.Find(delegate(NodoP o) { if (o.NOMBRE == caminito[i - 1].NOMBRE)return true; else return false; }), g3.Aristas.Count);
-                                        ari = new Arista(1, g3.Find(delegate(NodoP d) { if (d.NOMBRE == caminito[i].NOMBRE)return true; else return false; }), g3.Find(delegate(NodoP o) { if (o.NOMBRE == caminito[i - 1].NOMBRE)return true; else return false; }), "e" + (caminito.Count - i).ToString());
-                                        g3.AgregaArista(ari);
-                                    }
-                                    g.Clear(BackColor);
-                                    g3.pinta(g);
-                                    for (int c = 0; c < 10000000; c++)
-                                    {
-                                    }
-                                }
-
-                            }
-
-                            grafo.pinta(g);
-                        }
-
-
-                    }
-                    else
-                    {
-                        if (Dijks == 1)
-                        {
-                            int[] c = new int[grafo.Count];
-                            string caminitos = "";
-                            if(orig==null || destin==null)
-                            {
-                                MessageBox.Show("No se ha seleccionado un nodo destino o un nodo origen");
-                                break;
-                            }
-                            c = grafo.Dijkstra(orig,ref camino);
-                            foreach (int camii in c)
-                            {
-                                if (camii != 10000000)
-                                    caminitos += " " + camii.ToString();
-                                else
-                                {
-                                    caminitos += " " + "∞";
-                                }
-                            }
-                            caminitos += Environment.NewLine;
-                            foreach(string[] camii in camino)
-                            {
-                                caminitos += " "+camii[0]+":" + camii[1]; 
-                            }
-                            MessageBox.Show(caminitos);
-                            g2 = new Grafo(grafo);
-                            grafo.dejaCaminoDijkstra(camino,c,orig,destin);
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor selecciona el nodo para sacar sus caminos");
-                }
-                break;
+                
                 case "intercambio":
                 case "intercambioTool":
                     int cont=0;
@@ -474,7 +383,7 @@ namespace EditordeGrafos
                 break;
                 case "cierraEuler":
                     time.Stop();
-                    coloreando = false;
+                   
                     grafo.desColorea(resp);
                     if (g2.Count > 1)
                     {
@@ -600,30 +509,7 @@ namespace EditordeGrafos
 
         private void ColorItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            Configuracion.HideDropDown();
-            ColorDialog a = new ColorDialog();
-            switch (e.ClickedItem.Name)
-            {
-                case "ColArista":
-                    if (a.ShowDialog() == DialogResult.OK)
-                    {
-                        if (fl.EndCap == System.Drawing.Drawing2D.LineCap.ArrowAnchor)
-                            grafo.ColorAristaDi = a.Color;
-                        else
-                            grafo.ColorAristaNoDi = a.Color;
-                    }
-                    break;
-                case "ColNodo":
-                    if (a.ShowDialog() == DialogResult.OK)
-                    {
-                        foreach (NodoP ccol in grafo)
-                        {
-                            ccol.COLOR = a.Color;
-                        }
-                    }
-                    break;
-            }
-            Form1_Paint(this, null);
+          
         }
      private void Metodos_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -661,7 +547,7 @@ namespace EditordeGrafos
         private void IniciaCamino_Click(object sender, EventArgs e)
         {
             int[] c = new int[grafo.Count];
-            coloreando = false;
+          
             grafo.desColorea(resp);
             if (orig != null && destin != null)
                 switch (camin)
@@ -694,7 +580,7 @@ namespace EditordeGrafos
             
            
         }
-
+        //
         private void Ver_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             switch (e.ClickedItem.Name)
@@ -742,322 +628,7 @@ namespace EditordeGrafos
         private void Especiales_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e) //especiales
         {
            
-            switch (e.ClickedItem.Name)
-            {
-                case "kn":
-                    int nVer;
-                    char no = 'A';
-                    Form5 f5 = new Form5(3);
-                    if (f5.ShowDialog() != DialogResult.None)
-                    {
-                        g.Clear(BackColor);
-                        grafo = new Grafo();
-                        g2 = new Grafo();
-              
-                        tipoarista = 2;
-                  
-                        nVer = f5.N;
-                        if (nVer > 1)
-                        {
-                            double ang = 0;
-                            double inc = (360 / nVer) * Math.PI / 180;
-                            List<char> listAux = new List<char>();
-
-                            grafo = new Grafo();
-                            for (int i = 0; i < nVer; i++)
-                            {
-                                float x = this.Size.Width / 2 + (float)((Math.Cos(ang)) * (150));
-                                float y = this.Size.Height / 2 + (float)((Math.Sin(ang)) * (150));
-
-                                listAux.Add(no);
-                                grafo.Add(new NodoP(new Point((int)x, (int)y), no));
-
-                                ang += inc;
-                                no++;
-                            }
-                            listAux.RemoveAt(0);
-                            foreach (NodoP v in grafo)
-                            {
-                                foreach (char c in listAux)
-                                {
-                                    NodoP verAux = grafo.Find(delegate(NodoP nodi) { if (nodi.NOMBRE == c.ToString())return true; else return false; }); ;
-                                    if (v.insertaRelacion(verAux, grafo.Aristas.Count))
-                                    {
-                                        a = new Arista(tipoarista, v, verAux, "e" + grafo.Aristas.Count.ToString());
-                                        grafo.AgregaArista(a);
-                                        v.GRADO++;
-                                        verAux.GRADO++;
-                                        v.GradoExterno++;
-                                        verAux.GradoInterno++;
-                                    }
-
-                                    verAux.insertaRelacion(v, grafo.Aristas.Count - 1);
-                                    verAux.GradoExterno++;
-                                    v.GradoInterno++;
-                                }
-                                if (listAux.Count != 0)
-                                    listAux.RemoveAt(0);
-                            }
-                            grafo.pinta(g);
-                            nombre = 'A';
-                            for (int nn = 0; nn < grafo.Count; nn++)
-                            {
-                                nombre++;
-                            }
-                        }
-                    }
-                    break;
-                case "cn":
-                    f5 = new Form5(3);
-                    NodoP v1 = null, v2 = null;
-                    int nV;
-
-                    if (f5.ShowDialog() != DialogResult.None)
-                    {
-                        g.Clear(BackColor);
-                        grafo = new Grafo();
-                        g2 = new Grafo();
-               
-               
-                        tipoarista = 2;
-                
-                        nV = f5.N;
-                        no = 'A';
-                        double teta = 0;
-
-                        if (nV > 1)
-                        {
-                            double inc = (360 / nV) * Math.PI / 180;
-
-
-                            for (int i = 0; i < nV; i++)
-                            {
-                                float x = this.Size.Width / 2 + (float)((Math.Cos(teta)) * (150));
-                                float y = this.Size.Height / 2 + (float)((Math.Sin(teta)) * (150));
-
-
-                                v1 = new NodoP(new Point((int)x, (int)y), no);
-
-                                if (v2 != null)
-                                {
-                                    if (v1.insertaRelacion(v2, grafo.Aristas.Count))
-                                    {
-                                        a = new Arista(tipoarista, v1, v2, "e" + grafo.Aristas.Count.ToString());
-                                        grafo.AgregaArista(a);
-                                        v1.GRADO++;
-                                        v2.GRADO++;
-                                        v1.GradoExterno++;
-                                        v2.GradoInterno++;
-                                    }
-
-                                    v2.insertaRelacion(v1, grafo.Aristas.Count - 1);
-                                    v2.GradoExterno++;
-                                    v1.GradoInterno++;
-                                }
-
-                                grafo.AgregaNodo(v1);
-                                v2 = v1;
-                                teta += inc;
-                                no++;
-                            }
-                            a = new Arista(2, v1, grafo[0], "e");
-                            v1.insertaRelacion(grafo[0], grafo.Count);
-                            grafo[0].insertaRelacion(v1, grafo.Count);
-                            v1.GRADO++;
-                            v1.GradoExterno++;
-                            v1.GradoInterno++;
-                            grafo[0].GRADO++;
-                            grafo[0].GradoExterno++;
-                            grafo[0].GradoInterno++;
-                            grafo.AgregaArista(a);
-                        }
-                        grafo.pinta(g);
-                        nombre = 'A';
-                        for (int nn = 0; nn < grafo.Count; nn++)
-                        {
-                            nombre++;
-                        }
-                    }
-
-                    break;
-                case "wn":
-
-                     f5 = new Form5(3);
-                    v1 =  v2 = null;
-                    
-
-                    if (f5.ShowDialog() != DialogResult.None)
-                    {
-                        g.Clear(BackColor);
-                        grafo = new Grafo();
-                        g2 = new Grafo();
           
-                        tipoarista = 2;
-                
-                        nV = f5.N;
-                        no = 'A';
-                        double teta = 0;
-
-                        if (nV > 1)
-                        {
-                            double inc = (360 / nV) * Math.PI / 180;
-
-
-                            for (int i = 0; i < nV; i++)
-                            {
-                                float x = this.Size.Width / 2 + (float)((Math.Cos(teta)) * (150));
-                                float y = this.Size.Height / 2 + (float)((Math.Sin(teta)) * (150));
-
-
-                                v1 = new NodoP(new Point((int)x, (int)y), no);
-
-                                if (v2 != null)
-                                {
-                                    if (v1.insertaRelacion(v2, grafo.Aristas.Count))
-                                    {
-                                        a = new Arista(tipoarista, v1, v2, "e" + grafo.Aristas.Count.ToString());
-                                        grafo.AgregaArista(a);
-                                        v1.GRADO++;
-                                        v2.GRADO++;
-                                        v1.GradoExterno++;
-                                        v2.GradoInterno++;
-                                    }
-
-                                    v2.insertaRelacion(v1, grafo.Aristas.Count - 1);
-                                    v2.GradoExterno++;
-                                    v1.GradoInterno++;
-                                }
-
-                                grafo.AgregaNodo(v1);
-                                v2 = v1;
-                                teta += inc;
-                                no++;
-                            }
-                            a = new Arista(2, v1, grafo[0], "e");
-                            v1.insertaRelacion(grafo[0], grafo.Count);
-                            grafo[0].insertaRelacion(v1, grafo.Count);
-                            v1.GRADO++;
-                            v1.GradoExterno++;
-                            v1.GradoInterno++;
-                            grafo[0].GRADO++;
-                            grafo[0].GradoExterno++;
-                            grafo[0].GradoInterno++;
-                            grafo.AgregaArista(a);
-                        }
-                       
-                        nombre = 'A';
-                        for (int nn = 0; nn < grafo.Count; nn++)
-                        {
-                            nombre++;
-                        }
-                        v1 = new NodoP(new Point(this.Size.Width / 2, this.Size.Height / 2), nombre);
-                       
-                        foreach (NodoP pwn in grafo)
-                        {
-                            a = new Arista(2, v1, pwn, "e");
-                            v1.insertaRelacion(pwn, grafo.Count);
-                            pwn.insertaRelacion(v1, grafo.Count);
-                            v1.GRADO++;
-                            v1.GradoExterno++;
-                            v1.GradoInterno++;
-                            pwn.GRADO++;
-                           pwn.GradoExterno++;
-                            pwn.GradoInterno++;
-                            grafo.AgregaArista(a);
-                        }
-                        grafo.AgregaNodo(v1);
-                        grafo.pinta(g);
-                    }
-
-
-                    break;
-                case "Petersen":
-                        try
-                        {
-                            using (Stream stream = File.Open(Application.StartupPath + "\\Ejemplos" + "\\Petersen.grafo", FileMode.Open))
-                            {
-                               BinaryFormatter bin = new BinaryFormatter();
-                               grafo = (Grafo)bin.Deserialize(stream);
-                               grafo.pinta(g);
-                            }
-                        }
-                        catch (IOException exe)
-                        {
-                            MessageBox.Show(exe.ToString());
-                        }
-                        g2 = new Grafo();
-
-                    {
-                    }
-                        accion = 1;
-                        grafo.desseleccionar();
-                        nombre = 'A';
-                        for (int nn = 0; nn < grafo.Count; nn++)
-                        {
-                            nombre++;
-                        }
-                break;
-                case "Dodecaedro":
-                     try
-                        {
-                            using (Stream stream = File.Open(Application.StartupPath + "\\Ejemplos" + "\\dodecaedro.grafo", FileMode.Open))
-                            {
-                               BinaryFormatter bin = new BinaryFormatter();
-                               grafo = (Grafo)bin.Deserialize(stream);
-                               grafo.pinta(g);
-                            }
-                        }
-                        catch (IOException exe)
-                        {
-                            MessageBox.Show(exe.ToString());
-                        }
-                        g2 = new Grafo();
-             
-                        {
-                 
-                        }
-              
-                        
-                        accion = 1;
-             
-                        grafo.desseleccionar();
-                        nombre = 'A';
-                        for (int nn = 0; nn < grafo.Count; nn++)
-                        {
-                            nombre++;
-                        }
-                   break;
-                case "Cimitarra":
-                   try
-                   {
-                       using (Stream stream = File.Open(Application.StartupPath + "\\Ejemplos" + "\\Cimitarra.grafo", FileMode.Open))
-                       {
-                           BinaryFormatter bin = new BinaryFormatter();
-                           grafo = (Grafo)bin.Deserialize(stream);
-                           grafo.pinta(g);
-                       }
-                   }
-                   catch (IOException exe)
-                   {
-                       MessageBox.Show(exe.ToString());
-                   }
-                   g2 = new Grafo();
-          
-                   {
-                  
-                   }
-     
-                  
-                   accion = 1;
-            
-                   grafo.desseleccionar();
-                   nombre = 'A';
-                   for (int nn = 0; nn < grafo.Count; nn++)
-                   {
-                       nombre++;
-                   }
-                   break;
-            }
         }
 
 
@@ -1084,6 +655,15 @@ namespace EditordeGrafos
             Graphics au;
             au = Graphics.FromImage(bmp1);
             au.Clear(BackColor);
+
+            if (bandComplemento == 1)
+            {
+                Grafo aux = new Grafo();
+                aux = grafo;
+                grafo = new Grafo(aux);
+                bandComplemento = 0;
+            }
+
             if (band)
             {
                 //au.Clear(BackColor);
@@ -1157,8 +737,7 @@ namespace EditordeGrafos
                                 if (arista.toca(pm))
                                 {
                                     grafo.RemueveArista(arista);
-                                    if(coloreando==true)
-                                    grafo.colorear();
+                                  
                                    break;
                                 }
                             }
@@ -1363,40 +942,7 @@ namespace EditordeGrafos
 
         #endregion
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void Dirigida_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EliminaNodo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MueveGrafo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+      
 
         private void propiedadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1416,15 +962,54 @@ namespace EditordeGrafos
             grafo.desseleccionar();
         }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
+    
+
+        private void nombreDeAristasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-      
+            if (grafo.NombreAristasVisible)
+            {
+                grafo.NombreAristasVisible = false;
+            }
+            else
+            {
+                grafo.NombreAristasVisible = true;
+            }
+            grafo.pinta(g);
         }
 
-        private void toolStripButton4_Click(object sender, EventArgs e)
+        private void pesoDeAristasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (grafo.PesoAristasVisible)
+            {
+                grafo.PesoAristasVisible = false;
+            }
+            else
+            {
+                grafo.PesoAristasVisible = true;
+            }
+            grafo.pinta(g);
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 ed = new Form2(grafo);
+            ed.Activate();
+            ed.Show();
+        }
+
+        private void completoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+            if(grafo.Count>0)
+            {
+                grafo = new Grafo(g2);
+                g2 = new Grafo();
+
+            }
             
         }
+
+    
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
@@ -1434,10 +1019,5 @@ namespace EditordeGrafos
                 des.VISITADO = false;
             }
         }
-
-
-
-
-
     }
 }

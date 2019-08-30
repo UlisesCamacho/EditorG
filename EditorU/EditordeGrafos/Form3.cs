@@ -17,18 +17,18 @@ namespace EditordeGrafos
         int tipo;
         private bool band;
         private int accion;
-        public Form3(Grafo gra,int tip)
+        public Form3(Grafo gra, int tip)
         {
-            tipo=tip;
+            tipo = tip;
             grafo = new Grafo();
-            bool enco=false;
-           
+            bool enco = false;
+
             InitializeComponent();
-            g=CreateGraphics();
+            g = CreateGraphics();
             Relaciones.Select();
             band = false;
-            accion =0;
-           // label2.Visible = Componentes.Visible = false;
+            accion = 0;
+            // label2.Visible = Componentes.Visible = false;
             grafo = gra;
             AutoScroll = true;
             Vertices.Text = grafo.Count().ToString();
@@ -36,12 +36,12 @@ namespace EditordeGrafos
             if (grafo.Aristas.Count > 0)
                 if (grafo.Aristas.ToArray()[0].Tipo == 2)
                     Grado.Text = ((grafo.Aristas.Count()) * 2).ToString();
-            else
-                Grado.Text = ((grafo.Aristas.Count())).ToString();
-  
+                else
+                    Grado.Text = ((grafo.Aristas.Count())).ToString();
 
-            List<List<NodoP>> componentes=new List<List<NodoP>>();
-            List<NodoP> nue=new List<NodoP>();
+
+            List<List<NodoP>> componentes = new List<List<NodoP>>();
+            List<NodoP> nue = new List<NodoP>();
             if (tipo == 2)
             {
                 Text = "Grafo - Propiedades (No Dirigido)";
@@ -50,7 +50,7 @@ namespace EditordeGrafos
                     foreach (List<NodoP> n in componentes)
                     {
                         if (enco == false)
-                            if (n.Find(delegate(NodoP f) { if (f.NOMBRE == nod.NOMBRE)return true; else return false; }) != null)
+                            if (n.Find(delegate (NodoP f) { if (f.NOMBRE == nod.NOMBRE) return true; else return false; }) != null)
                                 enco = true;
                     }
                     if (enco == false)
@@ -67,54 +67,54 @@ namespace EditordeGrafos
                 //label2.Visible = true;
 
             }
- 
-                label6.Visible = true;
-                label7.Visible = true;
-                Interno.Visible = true;
-                Externo.Visible = true;
-                Interno.Items.Clear();
-                Externo.Items.Clear();
-                foreach(NodoP nodo in grafo)
+
+            label6.Visible = true;
+            label7.Visible = true;
+            Interno.Visible = true;
+            Externo.Visible = true;
+            Interno.Items.Clear();
+            Externo.Items.Clear();
+            foreach (NodoP nodo in grafo)
+            {
+                Interno.Items.Add(nodo.NOMBRE.ToString());
+                Externo.Items.Add(nodo.NOMBRE.ToString());
+            }
+
+            foreach (NodoP re in grafo)
+            {
+                foreach (NodoRel rela in re.relaciones)
                 {
-                    Interno.Items.Add(nodo.NOMBRE.ToString());
-                    Externo.Items.Add(nodo.NOMBRE.ToString());
+                    rela.VISITADA = false;
                 }
-                
-           foreach (NodoP re in grafo)
-           {
-               foreach (NodoRel rela in re.relaciones)
-               {
-                 rela.VISITADA = false;
-               }
-           }
-           Componentes.Text = componentes.Count.ToString();
-           dataGridView1.ColumnCount = grafo.Count+1;
-           dataGridView1.RowCount = grafo.Count+1;
-  
-           grafo.CreaMatriz();
+            }
+            Componentes.Text = componentes.Count.ToString();
+            dataGridView1.ColumnCount = grafo.Count + 1;
+            dataGridView1.RowCount = grafo.Count + 1;
+
+            grafo.CreaMatriz();
             //MessageBox.Show(grafo.Aristas[1].PESO.ToString());
-           for (int i = 0; i <= grafo.Count; i++)
-           {
-             for (int j = 0; j <= grafo.Count ; j++)
-             {
+            for (int i = 0; i <= grafo.Count; i++)
+            {
+                for (int j = 0; j <= grafo.Count; j++)
+                {
                     if (i == 0 && j > 0)
                     {
-                        dataGridView1.Rows[i].Cells[j].Value = grafo[j-1].NOMBRE.ToString();
+                        dataGridView1.Rows[i].Cells[j].Value = grafo[j - 1].NOMBRE.ToString();
                     }
                     else
                      if (j == 0 && i > 0)
                         dataGridView1.Rows[i].Cells[j].Value = grafo[i - 1].NOMBRE.ToString();
                     else
                          if (i != 0 && j != 0)
-                        dataGridView1.Rows[i].Cells[j].Value = grafo.MATRIZ[i-1][j-1].ToString();
-             }
-           }
+                        dataGridView1.Rows[i].Cells[j].Value = grafo.MATRIZ[i - 1][j - 1].ToString();
+                }
+            }
         }
 
         private void Form3_Resize(object sender, EventArgs e)
         {
             dataGridView1.Width = ClientSize.Width - 30;
-            
+
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -124,12 +124,12 @@ namespace EditordeGrafos
 
         private void Interno_TextChanged(object sender, EventArgs e)
         {
-            LabInterno.Text = grafo.Find(delegate(NodoP a) { if (a.NOMBRE.ToString() == Interno.Text)return true; else return false; }).GradoInterno.ToString() ;
+            LabInterno.Text = grafo.Find(delegate (NodoP a) { if (a.NOMBRE.ToString() == Interno.Text) return true; else return false; }).GradoInterno.ToString();
         }
 
         private void Externo_TextChanged(object sender, EventArgs e)
         {
-            LabExterno.Text = grafo.Find(delegate(NodoP a) { if (a.NOMBRE.ToString() == Externo.Text)return true; else return false; }).GradoExterno.ToString();
+            LabExterno.Text = grafo.Find(delegate (NodoP a) { if (a.NOMBRE.ToString() == Externo.Text) return true; else return false; }).GradoExterno.ToString();
         }
 
         private void Relaciones_CheckedChanged(object sender, EventArgs e)
@@ -163,21 +163,21 @@ namespace EditordeGrafos
             accion = 1;
             band = true;
             this.Form3_Paint(this, null);
-           
-            
+
+
         }
 
         private void Incidencia_CheckedChanged(object sender, EventArgs e)
         {
-            
-            dataGridView1.ColumnCount = grafo.Aristas.Count+1;
+
+            dataGridView1.ColumnCount = grafo.Aristas.Count + 1;
             dataGridView1.RowCount = grafo.Count + 1;
             dataGridView1.Visible = true;
             band = false;
             accion = 0;
             g.Clear(BackColor);
-          //  MessageBox.Show(grafo.Aristas[2].PESO.ToString());
-            int rel=0;
+            //  MessageBox.Show(grafo.Aristas[2].PESO.ToString());
+            int rel = 0;
             int x = 0;
             for (int i = 0; i <= grafo.Count; i++)
             {
@@ -185,25 +185,27 @@ namespace EditordeGrafos
                 {
                     if (j == 0 && i > 0)
                     {
-                        dataGridView1.Rows[i].Cells[j].Value =grafo[i - 1].NOMBRE.ToString();
+                        dataGridView1.Rows[i].Cells[j].Value = grafo[i - 1].NOMBRE.ToString();
                     }
                     else
                         if (i == 0 && j > 0)
-                            dataGridView1.Rows[i].Cells[j].Value = grafo.Aristas[j - 1].NOMBRE.ToString();
-                        else
+                        dataGridView1.Rows[i].Cells[j].Value = grafo.Aristas[j - 1].NOMBRE.ToString();
+                    else
                             if (i != 0 && j != 0)
-                            {
-                        if (grafo.Aristas[j - 1].Origen.NOMBRE.ToString().CompareTo(grafo[i - 1].NOMBRE.ToString()) == 0) //|| grafo.Aristas[j - 1].Destino.NOMBRE.ToString().CompareTo(grafo[i - 1].NOMBRE.ToString()) == 0)
-                            rel = grafo.Aristas[i-1].PESO; // modificaciones
+                    {
+                        if (grafo.Aristas[j - 1].Origen.NOMBRE.ToString().CompareTo(grafo[i - 1].NOMBRE.ToString()) == 0 || grafo.Aristas[j - 1].Destino.NOMBRE.ToString().CompareTo(grafo[i - 1].NOMBRE.ToString()) == 0)
+                            rel = 1;//grafo.Aristas[i-1].PESO; // modificaciones
                         else
                             rel = 0;
-                        if (grafo.Aristas[j - 1].Destino.NOMBRE.ToString().CompareTo(grafo[i - 1].NOMBRE.ToString()) == 0)
-                            rel = grafo.Aristas[j-1].PESO; // modificaiones
-                        else
-                            rel = 0;
+                        // if (grafo.Aristas[j - 1].Destino.NOMBRE.ToString().CompareTo(grafo[i - 1].NOMBRE.ToString()) == 0)
+                        //    rel = grafo.Aristas[j-1].PESO; // modificaiones
+                        // else
+                        //    rel = 0;
                         dataGridView1.Rows[i].Cells[j].Value = rel.ToString(); //rel.ToString();
-                            }x++;
-                }x = 0;
+                    }
+                    x++;
+                }
+                x = 0;
             }
         }
 
@@ -211,36 +213,74 @@ namespace EditordeGrafos
         {
             if (band)
             {
-                switch(accion)
+                switch (accion)
                 {
                     case 1:
-                         int x, y;
-                    g = CreateGraphics();
-                    x = Relaciones.Location.X;
-                    y = Relaciones.Location.Y + 30;
-                    dataGridView1.Visible = false;
-                    this.Size = new Size(Width, this.Height + grafo.Count * 20);
-                    if (this.Size.Height > 300)
-                        VerticalScroll.Enabled = true;
-                    g = CreateGraphics();
-            
-                    foreach (NodoP nod in grafo)
-                    {
-                        g.DrawString(nod.NOMBRE.ToString() + "->",new Font("Arial",10),Brushes.Black,x,y); //nod.NOMBRE.ToString()
-                            x += 20;
-                        foreach(NodoRel re in nod.relaciones)
-                        {
-                            x += 15;
-                            g.DrawString(re.ARRIBA.NOMBRE.ToString() + ",", new Font("Arial", 10), Brushes.Black, x, y);
-                        }
+                        int x, y;
+                        g = CreateGraphics();
                         x = Relaciones.Location.X;
-                        y += 20;
+                        y = Relaciones.Location.Y + 30;
+                        dataGridView1.Visible = false;
+                        this.Size = new Size(Width, this.Height + grafo.Count * 20);
+                        if (this.Size.Height > 300)
+                            VerticalScroll.Enabled = true;
+                        g = CreateGraphics();
 
-                    }
-                    break;
+                        foreach (NodoP nod in grafo)
+                        {
+                            g.DrawString(nod.NOMBRE.ToString() + "->", new Font("Arial", 10), Brushes.Black, x, y); //nod.NOMBRE.ToString()
+                            x += 20;
+                            foreach (NodoRel re in nod.relaciones)
+                            {
+                                x += 15;
+                                g.DrawString(re.ARRIBA.NOMBRE.ToString() + ",", new Font("Arial", 10), Brushes.Black, x, y);
+                            }
+                            x = Relaciones.Location.X;
+                            y += 20;
+
+                        }
+                        break;
                 }
             }
         }
 
+        private void Pesos_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView1.ColumnCount = grafo.Aristas.Count + 1;
+            dataGridView1.RowCount = grafo.Count + 1;
+            dataGridView1.Visible = true;
+            band = false;
+            accion = 0;
+            g.Clear(BackColor);
+            //  MessageBox.Show(grafo.Aristas[2].PESO.ToString());
+            int rel = 0;
+            int x = 0;
+            for (int i = 0; i <= grafo.Count; i++)
+            {
+                for (int j = 0; j <= grafo.Aristas.Count; j++)
+                {
+                    if (j == 0 && i > 0)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = grafo[i - 1].NOMBRE.ToString();
+                    }
+                    else
+                        if (i == 0 && j > 0)
+                        dataGridView1.Rows[i].Cells[j].Value = grafo.Aristas[j - 1].NOMBRE.ToString();
+                    else
+                            if (i != 0 && j != 0)
+                    {
+                        if (grafo.Aristas[j - 1].Origen.NOMBRE.ToString().CompareTo(grafo[i - 1].NOMBRE.ToString()) == 0 || grafo.Aristas[j - 1].Destino.NOMBRE.ToString().CompareTo(grafo[i - 1].NOMBRE.ToString()) == 0)
+                            rel = grafo.Aristas[j - 1].PESO;
+                        else
+                            rel = 0;
+          
+                        dataGridView1.Rows[i].Cells[j].Value = rel.ToString(); //rel.ToString();
+                    }
+                    x++;
+                }
+                x = 0;
+
+            }
+        }
     }
 }

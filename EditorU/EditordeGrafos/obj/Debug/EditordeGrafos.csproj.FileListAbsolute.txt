@@ -252,3 +252,14 @@ C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug
 C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\obj\Debug\EditordeGrafos.csproj.GenerateResource.Cache
 C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\bin\Debug\Editor De Grafos.exe
 C:\Users\Ulises\Documents\Ulises\Grafos\EditordeGrafosU\EditordeGrafos\bin\Debug\Editor De Grafos.pdb
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\EditordeGrafos.Form1.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\EditordeGrafos.Form2.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\EditordeGrafos.Form3.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\EditordeGrafos.Form5.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\EditordeGrafos.csproj.GenerateResource.Cache
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\bin\Debug\Editor De Grafos.exe.config
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\bin\Debug\Editor De Grafos.exe
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\bin\Debug\Editor De Grafos.pdb
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\EditordeGrafos.Properties.Resources.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\Editor De Grafos.exe
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\Editor De Grafos.pdb

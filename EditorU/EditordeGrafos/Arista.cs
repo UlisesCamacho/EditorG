@@ -164,7 +164,7 @@ namespace EditordeGrafos
             if (Destino == Origen)
             {
                 List<double> ptList = new List<double>();
-                //Bezier bc = new Bezier();
+               
 
                 ptList.Add(p1.X);
                 ptList.Add(p1.Y);
@@ -180,7 +180,7 @@ namespace EditordeGrafos
                 double[] ptind = new double[ptList.Count];
                 double[] p = new double[Puntos];
                 ptList.CopyTo(ptind, 0);
-                //bc.Bezier2D(ptind, (Puntos) / 2, p);
+              
 
                 for (int i = 1; i != Puntos - 1; i += 2)
                 {
@@ -193,7 +193,7 @@ namespace EditordeGrafos
                 p1 = Punto(1, 2);
                 p2 = Punto(1, 3);
                 List<double> ptList = new List<double>();
-                //Bezier bc = new Bezier();
+               
 
                 ptList.Add(Origen.POS.X);
                 ptList.Add(Origen.POS.Y);
@@ -208,8 +208,7 @@ namespace EditordeGrafos
                 double[] ptind = new double[ptList.Count];
                 double[] p = new double[Puntos];
                 ptList.CopyTo(ptind, 0);
-                //bc.Bezier2D(ptind, (Puntos) / 2, p);
-
+               
                 for (int i = 1; i != Puntos - 1; i += 2)
                 {
                     if (mouse.IntersectsWith(new Rectangle((int)p[i + 1], (int)p[i], 10, 10)))

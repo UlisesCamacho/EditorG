@@ -44,15 +44,15 @@
             this.LabExterno = new System.Windows.Forms.Label();
             this.Relaciones = new System.Windows.Forms.RadioButton();
             this.Incidencia = new System.Windows.Forms.RadioButton();
-            this.Adyacencia = new System.Windows.Forms.RadioButton();
             this.Pesos = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 85);
+            this.label1.Location = new System.Drawing.Point(15, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 0;
@@ -173,17 +173,17 @@
             this.Relaciones.AutoSize = true;
             this.Relaciones.Location = new System.Drawing.Point(19, 251);
             this.Relaciones.Name = "Relaciones";
-            this.Relaciones.Size = new System.Drawing.Size(130, 17);
+            this.Relaciones.Size = new System.Drawing.Size(129, 17);
             this.Relaciones.TabIndex = 9;
             this.Relaciones.TabStop = true;
-            this.Relaciones.Text = "Matriz de Relaciones: ";
+            this.Relaciones.Text = "Matriz de Adyasencia ";
             this.Relaciones.UseVisualStyleBackColor = true;
             this.Relaciones.CheckedChanged += new System.EventHandler(this.Relaciones_CheckedChanged);
             // 
             // Incidencia
             // 
             this.Incidencia.AutoSize = true;
-            this.Incidencia.Location = new System.Drawing.Point(155, 251);
+            this.Incidencia.Location = new System.Drawing.Point(215, 251);
             this.Incidencia.Name = "Incidencia";
             this.Incidencia.Size = new System.Drawing.Size(120, 17);
             this.Incidencia.TabIndex = 9;
@@ -192,36 +192,34 @@
             this.Incidencia.UseVisualStyleBackColor = true;
             this.Incidencia.CheckedChanged += new System.EventHandler(this.Incidencia_CheckedChanged);
             // 
-            // Adyacencia
-            // 
-            this.Adyacencia.AutoSize = true;
-            this.Adyacencia.Location = new System.Drawing.Point(404, 251);
-            this.Adyacencia.Name = "Adyacencia";
-            this.Adyacencia.Size = new System.Drawing.Size(121, 17);
-            this.Adyacencia.TabIndex = 9;
-            this.Adyacencia.TabStop = true;
-            this.Adyacencia.Text = "Lista de Adyacencia";
-            this.Adyacencia.UseVisualStyleBackColor = true;
-            this.Adyacencia.CheckedChanged += new System.EventHandler(this.Adyacencia_CheckedChanged);
-            // 
             // Pesos
             // 
             this.Pesos.AutoSize = true;
-            this.Pesos.Location = new System.Drawing.Point(281, 251);
+            this.Pesos.Location = new System.Drawing.Point(425, 251);
             this.Pesos.Name = "Pesos";
             this.Pesos.Size = new System.Drawing.Size(100, 17);
             this.Pesos.TabIndex = 10;
             this.Pesos.TabStop = true;
             this.Pesos.Text = "Matriz de Pesos";
             this.Pesos.UseVisualStyleBackColor = true;
+            this.Pesos.CheckedChanged += new System.EventHandler(this.Pesos_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "auxAPoyo";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 537);
+            this.ClientSize = new System.Drawing.Size(592, 537);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Pesos);
-            this.Controls.Add(this.Adyacencia);
             this.Controls.Add(this.Incidencia);
             this.Controls.Add(this.Relaciones);
             this.Controls.Add(this.LabExterno);
@@ -267,7 +265,7 @@
         private System.Windows.Forms.Label LabExterno;
         private System.Windows.Forms.RadioButton Relaciones;
         private System.Windows.Forms.RadioButton Incidencia;
-        private System.Windows.Forms.RadioButton Adyacencia;
         private System.Windows.Forms.RadioButton Pesos;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -830,70 +830,7 @@ namespace EditordeGrafos
 
 
            return D;
-          /*  List<NodoP> S = new List<NodoP>();
-            int []D=new int[Count];
-            int iO=this.FindIndex(delegate(NodoP a){if(a==origen)return true;else return false;});
-            int pw = 0;
-            int pv = 0;
-            int t;
-            Arista ar = new Arista();
-            NodoP w=new NodoP();
-            int ant = 100000000;
-            List<NodoP>VmS=new List<NodoP>();
-            List<NodoP>camino=new List<NodoP>();
-            foreach (NodoP e in this)
-            {
-                VmS.Add(e);
-            }
-            S.Add(origen);
-            VmS.Remove(origen);
-            creaMatrizCostos();
-            for(int i=0;i<Count;i++)
-            {
-                D[i]=MatrizCostos[iO][i];
-                }           
-            for (int i =0; i < Count; i++)
-            {
-                
-                if (i != iO)
-                {
-                    foreach (NodoP x in VmS)
-                    {
-                        ar=aristas.Find(delegate(Arista a){if(a.Origen.NOMBRE==origen.NOMBRE && a.Destino.NOMBRE==x.NOMBRE)return true;else return false;});
-                        
-                        if (ar != null)
-                        {
-                            if (ar.PESO == 100)
-                                t = 1;
-                            if (ar.PESO < ant)
-                            {
-                                ant = ar.PESO;
-                                w = x;
-                            }
-                        }
-                    }
-                    S.Add(w);
-                    VmS.Remove(w);
-                    ant = 100000000;
-                    pw = this.FindIndex(delegate(NodoP a) { if (a == w)return true; else return false; });
-                    if (pw > 0)
-                    {
-                        foreach (NodoP v in VmS)
-                        {
-                            if (v.relaciones.Find(delegate(NodoRel rel) { if (rel.ARRIBA == w)return true; else return false; }) != null || w.relaciones.Find(delegate(NodoRel rel) { if (rel.ARRIBA == v)return true; else return false; }) != null)
-                            {
-                                pv = this.FindIndex(delegate(NodoP a) { if (a == v)return true; else return false; });
-                                if (D[pv] > (D[pw] + MatrizCostos[pw][pv]))
-                                {
-                                    D[pv] = (D[pw] + MatrizCostos[pw][pv]);
-                                    camino.Add(this[pw]);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return D;*/
+       
         }   
         
         public void dejaCaminoDijkstra(List<string[]>caminos,int[] costos,NodoP origen,NodoP destino)
@@ -1084,25 +1021,7 @@ namespace EditordeGrafos
 
         }
 
-        public string clasifiacionTopologica(NodoP v)
-        {
-            NodoP w;
-            string a="";
-            v.VISITADO = true;
-            foreach (NodoRel l in v.relaciones)
-            {
-                w = l.ARRIBA;
-                if (w.VISITADO==false)
-                {
-                    
-                     a+=clasifiacionTopologica(w);
-                    // a += v.NOMBRE.ToString();
-                } 
-            }
-            a += v.NOMBRE.ToString();
-            return a;
-          //  MessageBox.Show(a);
-        }
+       
 
         public List<NodoP> verticesCut()
         {
@@ -1288,94 +1207,22 @@ namespace EditordeGrafos
 
         }
 
+        //complemento
+
+        public void Complemento()
+        {
+          
+
+            
+
+        }
+
         /// <summary>
         /// Algoritmo corolarios
         /// </summary>
         /// <returns></returns>
-        public bool corolarios()
-        {
-            bool ret=false;
-            if(aristas.Count<=((3*Count)-6))
-            {
-                ret = true;
-            }
-            else
-            {
-                if(aristas.Count<=((2*Count)-4))
-                {
-                    ret = true;
-                }
-            }
-           
-            return ret;
-        }
-        /// <summary>
-        /// Algoritmo isomorfismo
-        /// </summary>
-        /// <param name="otro">lista de grafos </param>
-        /// <returns></returns>
-        public bool  isomorfo(Grafo otro)
-        {
-            bool ret=true;
-            NodoP en;
-            foreach(NodoP pr in this)
-            {
-                en = otro.Find(delegate(NodoP bu) { if (bu.GRADO == pr.GRADO && !bu.VISITADO) { return true; } else return false; });
-                if (en == null)
-                    ret = false;
-                else
-                {
-                    en.VISITADO = true;
-                    pr.VISITADO = true;
-                }
-
-            }
-
-            if (otro.Find(delegate(NodoP d) { if(d.VISITADO==false)return true;else return false;})!=null)
-                ret = false;
-            else
-                if (this.Find(delegate(NodoP d) { if (d.VISITADO == false)return true; else return false; }) != null)
-                    ret = false;
-            return ret;
-        }
-        /// <summary>
-        /// ALgoritmo Kruskal
-        /// </summary>
-        /// <returns></returns>
-        public Grafo Kruskal()
-        {
-            Grafo retur = new Grafo(this);
-            retur.Aristas.Clear();
-            Arista arista;
-            NodoP o,d;
-            int compoactuales=retur.Componentes();
-            foreach (NodoP bor in retur)
-            {
-                bor.relaciones.Clear();
-                bor.GRADO = 0;
-                bor.GradoExterno = bor.GradoInterno = 0;
-            }
-            aristas.Sort(delegate(Arista a, Arista b) { return (a.PESO.CompareTo(b.PESO)); });
-            for (int i = 0; i < aristas.Count; i++)
-            {
-                if(retur.Componentes()!=1)
-                {
-                    compoactuales=retur.Componentes();
-                    o=retur.Find(delegate(NodoP a){if(a.NOMBRE==aristas[i].Origen.NOMBRE)return true;else return false;});
-                    d=retur.Find(delegate(NodoP a){if(a.NOMBRE==aristas[i].Destino.NOMBRE)return true;else return false;});
-                    arista = new Arista(2, o, d, "e");
-                    arista.PESO = aristas[i].PESO;
-                    o.insertaRelacion(d, i);
-                    d.insertaRelacion(o, i);
-                    retur.AgregaArista(arista);
-                    if (retur.Componentes() == compoactuales)
-                    {
-                        retur.RemueveArista(arista);
-                    }
-                }
-            }
-            return retur;
-        }
+       
+       
         #endregion
     }
 }
