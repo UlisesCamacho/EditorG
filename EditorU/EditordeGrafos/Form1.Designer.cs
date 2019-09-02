@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuArista = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Peso = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Nuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.Abrir = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,31 +61,34 @@
             this.nombreDeAristasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pesoDeAristasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuArista = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.Peso = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.especialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.completoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuArista.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // MenuArista
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoToolStripMenuItem,
-            this.herramientasToolStripMenuItem,
-            this.propiedadesToolStripMenuItem,
-            this.verToolStripMenuItem,
-            this.especialesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "Menu";
-        //    this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.MenuArista.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Peso});
+            this.MenuArista.Name = "MenuArista";
+            this.MenuArista.Size = new System.Drawing.Size(133, 26);
+            this.MenuArista.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.MenuArista_Closing);
+            // 
+            // Peso
+            // 
+            this.Peso.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1});
+            this.Peso.Name = "Peso";
+            this.Peso.Size = new System.Drawing.Size(132, 22);
+            this.Peso.Text = "Peso Arista";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
             // 
             // nuevoToolStripMenuItem
             // 
@@ -106,50 +111,52 @@
             this.Nuevo.Name = "Nuevo";
             this.Nuevo.ShortcutKeyDisplayString = "  ";
             this.Nuevo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.Nuevo.Size = new System.Drawing.Size(134, 22);
+            this.Nuevo.Size = new System.Drawing.Size(152, 22);
             this.Nuevo.Text = "Nuevo";
             // 
             // Abrir
             // 
             this.Abrir.Name = "Abrir";
             this.Abrir.ShortcutKeyDisplayString = "";
-            this.Abrir.Size = new System.Drawing.Size(134, 22);
+            this.Abrir.Size = new System.Drawing.Size(152, 22);
             this.Abrir.Text = "Abrir ";
+            this.Abrir.Click += new System.EventHandler(this.Abrir_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(131, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // Guardar
             // 
             this.Guardar.Name = "Guardar";
             this.Guardar.ShortcutKeyDisplayString = "";
-            this.Guardar.Size = new System.Drawing.Size(134, 22);
+            this.Guardar.Size = new System.Drawing.Size(152, 22);
             this.Guardar.Text = "Guardar";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(131, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // BorraGrafo
             // 
             this.BorraGrafo.Name = "BorraGrafo";
-            this.BorraGrafo.Size = new System.Drawing.Size(134, 22);
+            this.BorraGrafo.Size = new System.Drawing.Size(152, 22);
             this.BorraGrafo.Text = "Borra Grafo";
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(131, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(149, 6);
             // 
             // Salir
             // 
             this.Salir.Name = "Salir";
             this.Salir.ShortcutKeyDisplayString = "";
-            this.Salir.Size = new System.Drawing.Size(134, 22);
+            this.Salir.Size = new System.Drawing.Size(152, 22);
             this.Salir.Text = "Salir";
+            this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
             // herramientasToolStripMenuItem
             // 
@@ -293,28 +300,6 @@
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
-            // MenuArista
-            // 
-            this.MenuArista.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Peso});
-            this.MenuArista.Name = "MenuArista";
-            this.MenuArista.Size = new System.Drawing.Size(133, 26);
-            this.MenuArista.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.MenuArista_Closing);
-            // 
-            // Peso
-            // 
-            this.Peso.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1});
-            this.Peso.Name = "Peso";
-            this.Peso.Size = new System.Drawing.Size(132, 22);
-            this.Peso.Text = "Peso Arista";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
-            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
-            // 
             // especialesToolStripMenuItem
             // 
             this.especialesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -326,9 +311,25 @@
             // completoToolStripMenuItem
             // 
             this.completoToolStripMenuItem.Name = "completoToolStripMenuItem";
-            this.completoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.completoToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.completoToolStripMenuItem.Text = "Completo";
             this.completoToolStripMenuItem.Click += new System.EventHandler(this.completoToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem,
+            this.herramientasToolStripMenuItem,
+            this.propiedadesToolStripMenuItem,
+            this.verToolStripMenuItem,
+            this.especialesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "Menu";
             // 
             // Form1
             // 
@@ -350,28 +351,33 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.Resize += new System.EventHandler(this.Resize_form);
+            this.MenuArista.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.MenuArista.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ContextMenuStrip MenuArista;
+        private System.Windows.Forms.ToolStripMenuItem Peso;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Nuevo;
         private System.Windows.Forms.ToolStripMenuItem Abrir;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem Guardar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem BorraGrafo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripMenuItem Salir;
-        private System.Windows.Forms.ToolStripMenuItem Nuevo;
         private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AgregaNodo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem AgregaRelacion;
+        private System.Windows.Forms.ToolStripMenuItem AristaDirigida;
+        private System.Windows.Forms.ToolStripMenuItem AristaNoDirigida;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem MueveNodo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
@@ -379,15 +385,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem MueveGraf;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripMenuItem AristaDirigida;
-        private System.Windows.Forms.ToolStripMenuItem AristaNoDirigida;
         private System.Windows.Forms.ToolStripMenuItem EliminaAris;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripMenuItem BorraGrafo;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
-        private System.Windows.Forms.ContextMenuStrip MenuArista;
-        private System.Windows.Forms.ToolStripMenuItem Peso;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripMenuItem propiedadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nombreDeAristasToolStripMenuItem;
@@ -395,6 +394,7 @@
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem especialesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem completoToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 

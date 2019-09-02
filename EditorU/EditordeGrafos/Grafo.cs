@@ -342,7 +342,7 @@ namespace EditordeGrafos
 
 
         /// <summary>
-        /// Regresa el color anterior a un nodo despues de haber hecho el metodo de coloreados y haberlo cerrado
+      
         /// </summary>
         /// <param name="anterior"></param>
         public void desColorea(Color anterior)
@@ -702,9 +702,9 @@ namespace EditordeGrafos
             pesoAristasVisible = true;
         }
 
-        /// <summary>
+     
         /// Sirve para crear la matriz de costos 
-        /// </summary>
+        
            public void creaMatrizCostos()
         {
             MatrizCostos = new int[Count][];
@@ -833,158 +833,7 @@ namespace EditordeGrafos
        
         }   
         
-        public void dejaCaminoDijkstra(List<string[]>caminos,int[] costos,NodoP origen,NodoP destino)
-        {
-            bool ya = false;
-            int costo;   
-            string[]x;
-            //10000000
-            int index;
-            string destinAux=destino.NOMBRE;
-            string camino = " " ;
-            while(!ya)
-            {
-                x=caminos.Find(delegate(string[] bus){if(bus[0].CompareTo(destinAux)==0)return true;else return false;});
-                if(x==null)
-                {
-                    index=FindIndex(delegate(NodoP b){if(b.NOMBRE.CompareTo(destinAux)==0)return true;else return false;});
-                    if (index != -1)
-                    {
-                        costo = costos[index];
-                        if(costo!=10000000 && costo!=0)
-                        {
-                            camino=camino.Insert(0,origen.NOMBRE);
-                            ya=true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("No hay camino a ese nodo");
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No hay camino a ese nodo");
-                        return;
-                    }
-                }
-                else
-                {
-                    camino=camino.Insert(0, x[1] + x[0]);
-                    destinAux = x[1];
-                    caminos.Remove(x);
-                }
-            }
-            ColoreaRuta(camino,destino.NOMBRE);
-        }
-
-        /// <summary>
-        /// Colorea la ruta 
-        /// </summary>
-        /// <param name="ruta">lista de nodos </param>
-        /// <param name="destino">para saber a donde va </param>
-        public void ColoreaRuta(string ruta,string destino)
-        {
-            string or = "", des = "";
-            bool ya = false;
-            Arista a;
-            string ruta2="";
-            foreach(char c in ruta)
-            {
-                if(!ruta2.Contains(c))
-                    ruta2 += c.ToString();
-            }
-            ruta = ruta2;
-            or = ruta[0].ToString();
-            des=ruta[1].ToString();
-            if (des.CompareTo(" ")==0)
-                des = destino; 
-            ruta = ruta.Remove(0,2);
-            
-
-            while(!ya)
-            {
-                a = aristas.Find(delegate(Arista b) { if (b.Origen.NOMBRE.CompareTo(or) == 0 && b.Destino.NOMBRE.CompareTo(des) == 0)return true; else return false; });
-                if(a==null)
-                    a = aristas.Find(delegate(Arista b) { if (b.Origen.NOMBRE.CompareTo(des) == 0 && b.Destino.NOMBRE.CompareTo(or) == 0)return true; else return false; });
-                a.CAMINO=true;
-                or=des;
-                if(ruta.Length>1)
-                {
-                    des=ruta[0].ToString();
-                    ruta=ruta.Remove(0,1);
-                }
-                else
-                    ya=true;
-            }
-            
-        }
-
-        /// <summary>
-        /// Algoritmo de Floyd 
-        /// </summary>
-        /// <returns></returns>
-        public int[][] FLoyd()
-        {
-            int[][] A;
-            int i, j, k;
-            P = new NodoP[Count][];
-            creaMatrizCostos();
-            A = new int[Count][];
-            for (int x = 0; x < Count; x++)
-            {
-                A[x] = new int[Count];
-                P[x]=new NodoP[Count];
-            }
-            for (i = 0; i < Count ; i++)
-            {
-                for (k= 0; k < Count ; k++)
-                {
-                    A[i][k] = MatrizCostos[i][k];
-                }
-            }
-            for (k = 0; k < Count; k++)
-            {
-                for (i = 0; i < Count; i++)
-                {
-                    for (j = 0; j < Count; j++)
-                    {
-                        if (((A[i][k]) + (A[k][j])) < A[i][j])
-                        {
-                            A[i][j] = (A[i][k]) + (A[k][j]);
-                            P[i][j] = this[k];
-                        }
-                    }
-                }
-            }
-
-            return A;
-
-        }
-        /// <summary>
-        /// Contiene la lista de nodos FLoyd 
-        /// </summary>
-        /// <param name="i">iterador matriz i</param>
-        /// <param name="j">iterador matriz j</param>
-        /// <returns></returns>
-        public List<NodoP> imprimeFloyd(NodoP i,NodoP j)
-        {
-            List<NodoP> cami = new List<NodoP>();
-            NodoP k;
-            k=P[(this.FindIndex(delegate(NodoP a){ if (i.NOMBRE == a.NOMBRE)return true; else return false; }))][this.FindIndex(delegate(NodoP a){ if (j.NOMBRE == a.NOMBRE)return true; else return false; })];
-            if (k == null)
-            {
-                cami.Add(j);
-                return cami;
-
-            }
-                imprimeFloyd(i, k);
-                cami.Add(k);
-                imprimeFloyd(k, j);
-            
-            return cami;
-        }
-
+       
         public NodoP centroGrafo()
         {
             int [][]A;
@@ -997,7 +846,7 @@ namespace EditordeGrafos
             {
                 A[x] = new int[Count];
             }
-            A=FLoyd();
+           
             for (int i = 0; i < Count; i++)
             {
                 for (int j = 0; j < Count; j++)
@@ -1026,7 +875,7 @@ namespace EditordeGrafos
         public List<NodoP> verticesCut()
         {
             List<NodoP> cut = new List<NodoP>();
-            bool enco = false;
+           
             List<List<NodoP>> componentes = new List<List<NodoP>>();
             List<NodoP> nue = new List<NodoP>();
             Grafo aux = new Grafo(this);
@@ -1056,14 +905,14 @@ namespace EditordeGrafos
                 {
                     cut.Add(c);
                     aux = new Grafo(this);
-                    enco = false;
+                    //enco = false;
                     componentes = new List<List<NodoP>>();
                     nue = new List<NodoP>();
                 }
                 else
                 {
                     aux = new Grafo(this);
-                    enco = false;
+                    //enco = false;
                     componentes = new List<List<NodoP>>();
                     nue = new List<NodoP>();
                 }
@@ -1073,139 +922,10 @@ namespace EditordeGrafos
             return cut;
         }
         /// <summary>
-        /// Algoritmo amplitud
-        /// </summary>
-        /// <param name="S"></param>
-        /// <returns></returns>
-        public string amplitud(NodoP S)
-        {
-            string ret = "";
-            NodoP origen = S,v;
-            ret += origen.NOMBRE;
-            origen.VISITADO = true;
-            List<NodoP> faltantes=new List<NodoP>();
-            faltantes.Add(origen);
-
-            while(faltantes.Count>0)
-            {
-                v=faltantes[0];
-                faltantes.Remove(v);
-                foreach(NodoRel w in v.relaciones)
-                {
-                    if(!w.ARRIBA.VISITADO)
-                    {
-                        faltantes.Add(w.ARRIBA);
-                        ret += w.ARRIBA.NOMBRE;
-                    }
-                }
-            }
-            
-            return ret;
-        }
-        /// <summary>
-        /// Algoritmo aciclíco
-        /// </summary>
-        /// <returns></returns>
-        public bool aciclico()
-        {
-            bool ret=false;
-           
-            foreach(NodoP origen in this)
-            {
-                foreach (NodoP p in this)
-                    p.VISITADO = false;
-                ret = ciclo(origen, origen);
-                if (ret)
-                    break;
-            }
-            return !ret;
-
-        }
-
-        public bool ciclo(NodoP or,NodoP act)
-        {
-            bool ret=false;
-
-            if(or.NOMBRE.CompareTo(act.NOMBRE)==0 && act.VISITADO)
-            {
-                return true;
-            }
-
-            act.VISITADO = true;
-
-            foreach(NodoRel r in act.relaciones)
-            {
-                ret = ciclo(or, r.ARRIBA);
-            }
-            return ret;
-        }
-
-        public bool sucesor(NodoP or,NodoP hijo,int count)
-        {
-            bool ret = false;
-            foreach(NodoRel w in or.relaciones)
-            {
-                if (hijo.NOMBRE.CompareTo(w.ARRIBA.NOMBRE) == 0 && count!=0)
-                {
-                    return true;
-                }
-                else
-                    ret= sucesor(w.ARRIBA,hijo,count+1);
-                if (ret)
-                    break;
-            }
-            return ret;
-        }
-
-        /// <summary>
-        /// Algoritmo abarcador 
-        /// </summary>
-        /// <param name="or"></param>
-        /// <param name="sucesores"></param>
-        public void abarcador(NodoP or,string sucesores)
-        {
-            //1=arbol
-            //2=retorceso
-            //3=avance
-            //4=cruzados
-            bosque = true;
-            or.VISITADO = true;
-            Arista ari;
-
-            foreach(NodoRel w in or.relaciones)
-            {
-                if(!w.ARRIBA.VISITADO)
-                {
-                    ari=aristas.Find(delegate(Arista a) { if (a.Origen.NOMBRE.CompareTo(or.NOMBRE) == 0 && a.Destino.NOMBRE.CompareTo(w.ARRIBA.NOMBRE)==0)return true; else return false; });
-                    if (ari != null)
-                        ari.bosqueT = 1;
-                    abarcador(w.ARRIBA,sucesores+or.NOMBRE);
-                }
-                else
-                {
-                    if(sucesores.Contains(w.ARRIBA.NOMBRE))
-                    {
-                        ari=aristas.Find(delegate(Arista a) { if (a.Origen.NOMBRE.CompareTo(or.NOMBRE) == 0 && a.Destino.NOMBRE.CompareTo(w.ARRIBA.NOMBRE) == 0)return true; else return false; });
-                        if (ari != null)
-                            ari.bosqueT = 1;
-                    }
-                    else if (sucesor(or, w.ARRIBA, 0))
-                    {
-                        ari = aristas.Find(delegate(Arista a) { if (a.Origen.NOMBRE.CompareTo(or.NOMBRE) == 0 && a.Destino.NOMBRE.CompareTo(w.ARRIBA.NOMBRE) == 0)return true; else return false; });
-                        if (ari != null)
-                            ari.bosqueT = 3;
-                    }
-                    else
-                    {
-                        ari = aristas.Find(delegate(Arista a) { if (a.Origen.NOMBRE.CompareTo(or.NOMBRE) == 0 && a.Destino.NOMBRE.CompareTo(w.ARRIBA.NOMBRE) == 0)return true; else return false; });
-                        if (ari != null)
-                            ari.bosqueT = 4;
-                    }
-                }
-            }
-
-
-        }
+        
+      
+        
+        
 
         //complemento
 
@@ -1217,10 +937,7 @@ namespace EditordeGrafos
 
         }
 
-        /// <summary>
-        /// Algoritmo corolarios
-        /// </summary>
-        /// <returns></returns>
+      
        
        
         #endregion

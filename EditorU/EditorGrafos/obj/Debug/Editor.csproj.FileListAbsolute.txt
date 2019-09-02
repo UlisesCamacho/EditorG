@@ -1,0 +1,61 @@
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\bin\Debug\EditorGrafos.exe.config
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\bin\Debug\EditorGrafos.exe
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\bin\Debug\EditorGrafos.pdb
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\Editor.csprojAssemblyReference.cache
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.Configuracion.resources
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.EditorGrafo.resources
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.MuestraCadena.resources
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.nPartita.resources
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.Properties.Resources.resources
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\Editor.csproj.GenerateResource.cache
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\Editor.csproj.CoreCompileInputs.cache
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.exe
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.pdb
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.MatrizAdyacencya.resources
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.MatrizPesos.resources
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.MatrizIncidencia.resources
+C:\Users\isais\Documents\Editor\Editor\EditorGrafos\obj\Debug\EditorGrafos.Propiedades.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\bin\Debug\EditorGrafos.exe.config
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.exe
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.pdb
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\bin\Debug\EditorGrafos.exe
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\bin\Debug\EditorGrafos.pdb
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.Configuracion.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.EditorGrafo.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.MatrizAdyacencya.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.MatrizIncidencia.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.MatrizPesos.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.MuestraCadena.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.nPartita.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.Properties.Resources.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\EditorGrafos.Propiedades.resources
+C:\Users\Ulises\Downloads\Editor\EditorGrafos\obj\Debug\Editor.csproj.GenerateResource.Cache
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\bin\Debug\EditorGrafos.exe.config
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.exe
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.pdb
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\bin\Debug\EditorGrafos.exe
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\bin\Debug\EditorGrafos.pdb
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.Configuracion.resources
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.EditorGrafo.resources
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.MatrizAdyacencya.resources
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.MatrizIncidencia.resources
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.MatrizPesos.resources
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.MuestraCadena.resources
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.nPartita.resources
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.Properties.Resources.resources
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\EditorGrafos.Propiedades.resources
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\Editor.csproj.GenerateResource.Cache
+C:\Users\Ulises\Desktop\Ulises\Editor\EditorGrafos\obj\Debug\Editor.csprojResolveAssemblyReference.cache
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\bin\Debug\EditorGrafos.exe.config
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\bin\Debug\EditorGrafos.exe
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\bin\Debug\EditorGrafos.pdb
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\obj\Debug\Editor.csprojResolveAssemblyReference.cache
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\obj\Debug\EditorGrafos.EditorGrafo.resources
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\obj\Debug\EditorGrafos.Matrizes.resources
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\obj\Debug\EditorGrafos.Properties.Resources.resources
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\obj\Debug\Editor.csproj.GenerateResource.Cache
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\obj\Debug\EditorGrafos.exe
+C:\Users\Ulises\Desktop\Ulises\Editor - copia\EditorGrafos\obj\Debug\EditorGrafos.pdb
+C:\Users\Ulises\Desktop\EditorU\EditorGrafos\bin\Debug\EditorGrafos.exe.config
+C:\Users\Ulises\Desktop\EditorU\EditorGrafos\obj\Debug\EditorGrafos.exe
+C:\Users\Ulises\Desktop\EditorU\EditorGrafos\obj\Debug\EditorGrafos.pdb

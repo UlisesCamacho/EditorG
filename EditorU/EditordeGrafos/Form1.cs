@@ -252,15 +252,7 @@ namespace EditordeGrafos
                             MessageBox.Show(exe.ToString());
                         }
                         g2 = new Grafo();
-                        if (grafo.Aristas[0].Tipo == 1)
-                        {
-                      
-
-                        }
-                        else
-                        {
-                    
-                        }
+                     
          
                         accion = 1;
                         grafo.desseleccionar();
@@ -546,33 +538,8 @@ namespace EditordeGrafos
 
         private void IniciaCamino_Click(object sender, EventArgs e)
         {
-            int[] c = new int[grafo.Count];
-          
-            grafo.desColorea(resp);
-            if (orig != null && destin != null)
-                switch (camin)
-                {
-
-                    case 1:
-                        try
-                        {
-                   //         MessageBox.Show("hay " + (grafo.CaminosRecursivo(orig, destin, int.Parse(nCaminos.Text))).ToString() + " Caminos");
-                        }
-                        catch (Exception w)
-                        {
-                            MessageBox.Show("Debe introducir un número entero");
-                        }
-                        break;
-                    case 2:
-                //        MessageBox.Show("hay " + (grafo.MatrizInfinita(orig, destin, int.Parse(nCaminos.Text), ProgresoMatriz)).ToString() + " Caminos");
-                   //     ProgresoMatriz.Value = 0;
-                        break;
-                    case 3:
-
-                        break;
-                }
-            else
-                MessageBox.Show("Por favor seleccione los vertices destino y origen");
+            
+         
         }
 
         private void Euler_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -990,6 +957,16 @@ namespace EditordeGrafos
             grafo.pinta(g);
         }
 
+        private void Salir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Abrir_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 ed = new Form2(grafo);
@@ -1013,7 +990,7 @@ namespace EditordeGrafos
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            grafo.abarcador(grafo[0],"");
+            
             foreach(NodoP des in grafo)
             {
                 des.VISITADO = false;

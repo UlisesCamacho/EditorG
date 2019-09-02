@@ -263,3 +263,4 @@ C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\E
 C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\EditordeGrafos.Properties.Resources.resources
 C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\Editor De Grafos.exe
 C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\Editor De Grafos.pdb
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditordeGrafos\obj\Debug\EditordeGrafos.csprojResolveAssemblyReference.cache

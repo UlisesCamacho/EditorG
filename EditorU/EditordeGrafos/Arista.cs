@@ -46,7 +46,7 @@ namespace EditordeGrafos
             nombre = nomb;
             peso = 0;
             visitada = false;
-            bosqueT = 0;
+         
         }
 
         public Arista(Arista a)
