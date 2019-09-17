@@ -13,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace EditorGrafos
 {
     public partial class EditorGrafo : Form
@@ -79,6 +80,7 @@ namespace EditorGrafos
             bpar = false;
             arrow = new AdjustableArrowCap(5, 5);
             timer1.Enabled = false;
+           
            
             grafoEspecial = false;
             
@@ -431,7 +433,8 @@ namespace EditorGrafos
         {
            
             
-        }        private void Nodo_Click(object sender, ToolStripItemClickedEventArgs e)
+        }
+        private void Nodo_Click(object sender, ToolStripItemClickedEventArgs e)
         {
             band = false;
             bandA = false;
@@ -713,7 +716,7 @@ namespace EditorGrafos
 
         private void matrizDePesosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Matrizes v = new Matrizes(grafo, grafo.tipo);
+            Matrices v = new Matrices(grafo, grafo.tipo);
             v.ShowDialog();
         }
 
@@ -781,7 +784,7 @@ namespace EditorGrafos
 
         private void propiedadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Matrizes v = new Matrizes(grafo, grafo.tipo);
+            Matrices v = new Matrices(grafo, grafo.tipo);
             v.ShowDialog();
         //    MatrizAdyacencya v = new MatrizAdyacencya(grafo);
          //   v.ShowDialog();
@@ -818,6 +821,7 @@ namespace EditorGrafos
                 Stream stream = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read, FileShare.None);
 
                 grafo = (Grafo)formatter.Deserialize(stream);
+                
 
                 if (grafo.tipo == 2) // GRAFO NO DIRIGIDO
                 {
@@ -911,7 +915,7 @@ namespace EditorGrafos
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Matrizes v = new Matrizes(grafo, grafo.tipo);
+            Matrices v = new Matrices(grafo, grafo.tipo);
             v.ShowDialog();
         }
 
@@ -1064,6 +1068,110 @@ namespace EditorGrafos
         {
 
         }
+
+        private void isoformismoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //isomorfismo
+           
+            Panel pa = new Panel();
+            pa.Name = "Isomorfimo";
+            pa.Height = 700;
+            pa.Width = 500;
+            pa.Location = new Point(500, 0);
+            pa.BackColor = Color.GhostWhite;
+            Controls.Add(pa);
+            Panel_Paint(this, null);
+           
+            
+            
+        }
+
+        private void Panel_Paint(object sender, PaintEventArgs e)
+        {
+            intercambiaColor = false;
+            grafo = new Grafo();
+            opcion = 0;
+            g = CreateGraphics();
+            bmp1 = new Bitmap(ClientSize.Width, ClientSize.Height);
+            band = false;
+            bandI = false;
+            bandF = false;
+            bpar = false;
+            arrow = new AdjustableArrowCap(5, 5);
+            timer1.Enabled = false;
+
+
+            grafoEspecial = false;
+            Graphics ga = CreateGraphics();
+            ga = Graphics.FromImage(bmp1);
+            ga.Clear(BackColor);
+
+
+            if (bandF || band)
+            {
+                switch (opcion)
+                {
+                    case 1:
+                        ga.FillEllipse(grafo.brushN, p1.X - grafo.radio, p1.Y - grafo.radio, grafo.radio * 2, grafo.radio * 2);
+                        ga.DrawEllipse(grafo.penN, p1.X - grafo.radio + (grafo.penN.Width / 2), p1.Y - grafo.radio + (grafo.penN.Width / 2), grafo.radio * 2 - (grafo.penN.Width / 2), grafo.radio * 2 - (grafo.penN.Width / 2));
+                        ga.DrawString(nodoP.nombre.ToString(), grafo.font, grafo.brushF, p1.X - 6, p1.Y - 6);
+                        break;
+
+                    case 2:
+                        if (bandF)
+                        {
+                            if (nodoP.Equals(nodoAux))
+                                ga.DrawBezier(grafo.penA, nodoP.centro.X - 15, nodoP.centro.Y - 15, nodoP.centro.X - 20, nodoP.centro.Y - 60, nodoP.centro.X + 20, nodoP.centro.Y - 60, nodoP.centro.X + 15, nodoP.centro.Y - 15);
+                            else
+                                ga.DrawLine(grafo.penA, grafo.BuscaInterseccion(nodoP.centro, nodoAux.centro), grafo.BuscaInterseccion(nodoAux.centro, nodoP.centro));
+                        }
+                        if (band)
+                            ga.DrawLine(grafo.penA, grafo.BuscaInterseccion(nodoP.centro, p2), p2);
+                        break;
+
+                    case 9:
+                        if (bandF)
+                        {
+                            if (nodoP.Equals(nodoAux))
+                                ga.DrawBezier(grafo.penA, nodoP.centro.X - 15, nodoP.centro.Y - 15, nodoP.centro.X - 20, nodoP.centro.Y - 60, nodoP.centro.X + 20, nodoP.centro.Y - 60, nodoP.centro.X + 15, nodoP.centro.Y - 15);
+                            else
+                                ga.DrawLine(grafo.penA, grafo.BuscaInterseccion(nodoP.centro, nodoAux.centro), grafo.BuscaInterseccion(nodoAux.centro, nodoP.centro));
+                        }
+                        if (band)
+                            ga.DrawLine(grafo.penA, grafo.BuscaInterseccion(nodoP.centro, p2), p2);
+                        break;
+                }
+                bandF = false;
+            }
+
+            if (bandI)
+            {
+                ga.Clear(BackColor);
+                grafo.ImprimirGrafo(ga, bpar);
+                bandI = false;
+            }
+
+            if (opcion == 6 || opcion == 7)
+            {
+                ga.Clear(BackColor);
+                grafo.Clear();
+                grafo.numN = 1;
+                grafo.edoNom = false;
+                if (opcion == 7)
+                {
+                    grafo = new Grafo();
+
+                }
+            }
+            if (opcion != 6)
+                if (opcion != 7)
+                    grafo.ImprimirGrafo(ga, bpar);
+            g.DrawImage(bmp1, 0, 0);
+
+
+        }
+
+
 
         public void asignaPropiedades()
         {

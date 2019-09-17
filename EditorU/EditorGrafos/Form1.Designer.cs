@@ -55,11 +55,12 @@
             this.nombreDeAristasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.especialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.completoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.biPartitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ciclicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giratorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.isoformismoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
@@ -72,7 +73,8 @@
             this.herramientasToolStripMenuItem,
             this.propiedadesToolStripMenuItem,
             this.verToolStripMenuItem,
-            this.especialesToolStripMenuItem});
+            this.especialesToolStripMenuItem,
+            this.isoformismoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
@@ -246,27 +248,34 @@
             // completoToolStripMenuItem
             // 
             this.completoToolStripMenuItem.Name = "completoToolStripMenuItem";
-            this.completoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.completoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.completoToolStripMenuItem.Text = "Completo";
             this.completoToolStripMenuItem.Click += new System.EventHandler(this.completoToolStripMenuItem_Click);
             // 
             // biPartitaToolStripMenuItem
             // 
             this.biPartitaToolStripMenuItem.Name = "biPartitaToolStripMenuItem";
-            this.biPartitaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.biPartitaToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.biPartitaToolStripMenuItem.Text = "Bi-Partita";
             // 
             // ciclicoToolStripMenuItem
             // 
             this.ciclicoToolStripMenuItem.Name = "ciclicoToolStripMenuItem";
-            this.ciclicoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ciclicoToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.ciclicoToolStripMenuItem.Text = "Ciclico";
             // 
             // giratorioToolStripMenuItem
             // 
             this.giratorioToolStripMenuItem.Name = "giratorioToolStripMenuItem";
-            this.giratorioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.giratorioToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.giratorioToolStripMenuItem.Text = "Giratorio";
+            // 
+            // isoformismoToolStripMenuItem
+            // 
+            this.isoformismoToolStripMenuItem.Name = "isoformismoToolStripMenuItem";
+            this.isoformismoToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.isoformismoToolStripMenuItem.Text = "Isomorfismo";
+            this.isoformismoToolStripMenuItem.Click += new System.EventHandler(this.isoformismoToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -325,6 +334,7 @@
         private System.Windows.Forms.ToolStripMenuItem giratorioToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem isoformismoToolStripMenuItem;
     }
 }
 

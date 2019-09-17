@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EditorGrafos
 {
-    partial class Matrizes : Form
+    partial class Matrices : Form
     {
         Grafo grafo;
         Grafo grafog;
@@ -19,7 +19,7 @@ namespace EditorGrafos
         int tipo;
         private bool band;
         private int accion;
-        public Matrizes(Grafo grafoP, int tipe)
+        public Matrices(Grafo grafoP, int tipe)
         {
             InitializeComponent();
             grafo = grafoP;

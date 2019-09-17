@@ -55,11 +55,11 @@
     <Compile Include="Grafo.cs" />
     <Compile Include="GrafoDirigido.cs" />
     <Compile Include="GrafoNoDirigido.cs" />
-    <Compile Include="Matrizes.cs">
+    <Compile Include="Matrices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Matrizes.Designer.cs">
-      <DependentUpon>Matrizes.cs</DependentUpon>
+    <Compile Include="Matrices.Designer.cs">
+      <DependentUpon>Matrices.cs</DependentUpon>
     </Compile>
     <Compile Include="NodoP.cs" />
     <Compile Include="Arista.cs" />
@@ -69,8 +69,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Matrizes.resx">
-      <DependentUpon>Matrizes.cs</DependentUpon>
+    <EmbeddedResource Include="Matrices.resx">
+      <DependentUpon>Matrices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

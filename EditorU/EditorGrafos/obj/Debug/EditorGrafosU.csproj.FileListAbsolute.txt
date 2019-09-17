@@ -8,3 +8,13 @@ C:\Users\Ulises\Desktop\EditorU\EditorGrafos\obj\Debug\EditorGrafos.Properties.R
 C:\Users\Ulises\Desktop\EditorU\EditorGrafos\obj\Debug\EditorGrafosU.csproj.GenerateResource.Cache
 C:\Users\Ulises\Desktop\EditorU\EditorGrafos\obj\Debug\EditorGrafos.exe
 C:\Users\Ulises\Desktop\EditorU\EditorGrafos\obj\Debug\EditorGrafos.pdb
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\bin\Debug\EditorGrafos.exe.config
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\bin\Debug\EditorGrafos.exe
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\bin\Debug\EditorGrafos.pdb
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\obj\Debug\EditorGrafosU.csprojResolveAssemblyReference.cache
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\obj\Debug\EditorGrafos.EditorGrafo.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\obj\Debug\EditorGrafos.Matrices.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\obj\Debug\EditorGrafos.Properties.Resources.resources
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\obj\Debug\EditorGrafosU.csproj.GenerateResource.Cache
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\obj\Debug\EditorGrafos.exe
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU\EditorGrafos\obj\Debug\EditorGrafos.pdb

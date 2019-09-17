@@ -1,6 +1,6 @@
 ﻿namespace EditorGrafos
 {
-    partial class Matrizes
+    partial class Matrices
     {
         /// <summary>
         /// Required designer variable.
