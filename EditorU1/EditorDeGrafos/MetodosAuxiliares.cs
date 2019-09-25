@@ -308,16 +308,18 @@ namespace EditorDeGrafos
         {
             Nodo inicio;
             inicio = null;
-            int gradoMayor = 0;
+            string nombre="1";
+           int gradoMayor = 0;
             foreach (Nodo nodo in grafo)
             {
+               
                 if (nodo.Aristas.Count % 2 != 0)
                 {
                     inicio = nodo;
                     break;
                 }
             }
-            foreach (Nodo nodo in grafo)
+           foreach (Nodo nodo in grafo)
             {
                 if (nodo.Aristas.Count % 2 != 0)
                 {
@@ -328,6 +330,7 @@ namespace EditorDeGrafos
                     }
                 }
             }
+           
             return inicio;
         }
 

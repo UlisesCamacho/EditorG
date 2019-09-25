@@ -65,6 +65,7 @@ namespace EditorDeGrafos
         private Nodo actual;
         private Arista arista;
         private Grafo grafo;
+        
 
         #endregion
 
@@ -1352,7 +1353,7 @@ namespace EditorDeGrafos
         private void EditorDeGrafos_Resize(object sender, EventArgs e)
         {
             //Point p = new Point(EspecialesTool.Location.X - 40, 0); //
-            Point p = new Point(0, 0);
+         /*   Point p = new Point(0, 0);
             p.Y = numericKn.Location.Y;
             numericKn.Location = p;
             p.Y = numericCn.Location.Y;
@@ -1361,7 +1362,7 @@ namespace EditorDeGrafos
             numericWn.Location = p;
             this.ClientSize = new Size(this.Size.Width - 16, this.Size.Height - 39);
             this.bmp = new Bitmap(this.ClientSize.Width, this.ClientSize.Height); // try catch()
-            g = CreateGraphics();
+            g = CreateGraphics();*/
         }
 
         private void EditorDeGrafos_Paint(object sender, PaintEventArgs e)
@@ -2206,6 +2207,53 @@ namespace EditorDeGrafos
             this.grafo.actualizaId();
             this.EditorDeGrafos_Paint(this, null);
 
+        }
+
+        private void conectadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            Caminos camino;
+            if (!grafo.aislado()/* && !grafo.componentesSeparados()*/)//Si no tiene un nodo aislado puede que tenga circuito o camino
+            {
+                #region Circuito
+                if (grafo.gradosPares())//Si todos sus nodos son de grado par Existe circuito
+                {
+                    /**/
+                    this.recorrido = grafo.circuitoEuleriano();
+                    camino = new Caminos(recorrido, "Existe el circuito", relojEuler);
+                    camino.borra_Recorrido += new Caminos.Borra_Recorrido(this.redibujaGrafo);
+                    rec = 0;
+                    bandRecorrido = false;
+                    camino.Show();
+                    this.EditorDeGrafos_Paint(this, null);
+                }
+                #endregion
+
+                #region Camino
+                else
+                {
+                    if (grafo.nodosImpares() == 2)//Si tiene 2 nodos de grado impar tiene camino
+                    {
+                        this.recorrido = grafo.caminoEuleriano();
+                        /**/
+                        camino = new Caminos(recorrido, "Existe el Camino", relojEuler);
+                        camino.borra_Recorrido += new Caminos.Borra_Recorrido(this.redibujaGrafo);
+                        rec = 0;
+                        bandRecorrido = false;
+                        camino.Show();
+                        this.EditorDeGrafos_Paint(this, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Grafo no tiene ni camino ni circuito", "No existe");
+                    }
+                }
+                #endregion
+            }
+            else//Si tiene un nodo aislado tiene circuito y camino
+            {
+                MessageBox.Show("El grafo tiene un nodo aislado, por lo tanto no existe camino ni circuito", "No existe");
+            }
         }
     }
 }

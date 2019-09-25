@@ -144,6 +144,7 @@
             this.biToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ciclicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.isomorfismoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conectadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericKn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCn)).BeginInit();
@@ -807,7 +808,8 @@
             this.propiedadesToolStripMenuItem,
             this.verToolStripMenuItem,
             this.especialesToolStripMenuItem,
-            this.isomorfismoToolStripMenuItem});
+            this.isomorfismoToolStripMenuItem,
+            this.conectadoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1047, 24);
@@ -1031,6 +1033,13 @@
             this.isomorfismoToolStripMenuItem.Text = "Isomorfismo";
             this.isomorfismoToolStripMenuItem.Click += new System.EventHandler(this.isomorfismoToolStripMenuItem_Click);
             // 
+            // conectadoToolStripMenuItem
+            // 
+            this.conectadoToolStripMenuItem.Name = "conectadoToolStripMenuItem";
+            this.conectadoToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.conectadoToolStripMenuItem.Text = "Conectado";
+            this.conectadoToolStripMenuItem.Click += new System.EventHandler(this.conectadoToolStripMenuItem_Click);
+            // 
             // EditorDeGrafos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1180,6 +1189,7 @@
         private System.Windows.Forms.ToolStripMenuItem matrizDePesosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gradoGrafoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conectadoToolStripMenuItem;
     }
 }
 

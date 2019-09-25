@@ -130,13 +130,14 @@ C:\Users\Ulises\Desktop\EditorDeGrafos\EditorU - copia\EditorDeGrafos\obj\Debug\
 C:\Users\Ulises\Desktop\EditorDeGrafos\EditorU - copia\EditorDeGrafos\obj\Debug\EditorDeGrafos.csproj.GenerateResource.Cache
 C:\Users\Ulises\Desktop\EditorDeGrafos\EditorU - copia\EditorDeGrafos\obj\Debug\EditorDeGrafos.exe
 C:\Users\Ulises\Desktop\EditorDeGrafos\EditorU - copia\EditorDeGrafos\obj\Debug\EditorDeGrafos.pdb
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU1\EditorDeGrafos\bin\Debug\EditorDeGrafos.exe.config
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.exe
+C:\Users\Ulises\Documents\Ulises\Grafos\Ulises\EditordeGrafosU\EditorG\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.pdb
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\bin\Debug\EditorDeGrafos.exe.config
-C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.exe
-C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.pdb
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\bin\Debug\EditorDeGrafos.exe
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\bin\Debug\EditorDeGrafos.pdb
-C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.csprojResolveAssemblyReference.cache
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.CambiaPesoArista.resources
+C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.Caminos.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.Dijkstra.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.EditorDeGrafos.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.GradosDir.resources
@@ -152,3 +153,5 @@ C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.PesosAr
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.Properties.Resources.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.TamañoYOrden.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.csproj.GenerateResource.Cache
+C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.exe
+C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.pdb

@@ -723,6 +723,7 @@ namespace EditorDeGrafos
             this.setGrados();
             recorridas = new List<Arista>();
             actual = this[0];
+           // Console.Write(actual.Nombre);
             do
             {
                 recorrido.Add(actual.Nombre);
