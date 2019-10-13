@@ -72,6 +72,12 @@
     <Compile Include="EditorDeGrafos.Designer.cs">
       <DependentUpon>EditorDeGrafos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Euler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Euler.Designer.cs">
+      <DependentUpon>Euler.cs</DependentUpon>
+    </Compile>
     <Compile Include="GradosDir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditorDeGrafos.resx">
       <DependentUpon>EditorDeGrafos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Euler.resx">
+      <DependentUpon>Euler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GradosDir.resx">
       <DependentUpon>GradosDir.cs</DependentUpon>

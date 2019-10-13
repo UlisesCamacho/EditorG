@@ -140,6 +140,7 @@ C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.CambiaP
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.Caminos.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.Dijkstra.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.EditorDeGrafos.resources
+C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.Euler.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.GradosDir.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.GradosNoDir.resources
 C:\Users\Ulises\Desktop\EditorU1\EditorDeGrafos\obj\Debug\EditorDeGrafos.GrafoSecundario.resources

@@ -1,0 +1,19 @@
+void recorrido(NodoP aux, String cadena)
+        {
+
+            String camino = cadena + "-" + aux.nombre.ToString();
+            aux.visitado = true;
+            foreach (Arista ar in aux.aristas)
+            {
+                if (!ar.destino.visitado)
+                {
+                    recorrido(ar.destino, camino);
+                }
+                else
+                {
+
+                }
+            }
+            aux.visitado = false;
+
+        }

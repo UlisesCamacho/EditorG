@@ -1,10 +1,10 @@
 matrizadyasencia grafo secundario
 
-0011
+0110
 
-0011
+1001
 
-1100
+1001
 
-1100
+0110
 

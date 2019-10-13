@@ -145,6 +145,10 @@
             this.ciclicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.isomorfismoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conectadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conectadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eulerCircuitoCaminoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hamiltonCaminosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coloreadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericKn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericCn)).BeginInit();
@@ -809,7 +813,11 @@
             this.verToolStripMenuItem,
             this.especialesToolStripMenuItem,
             this.isomorfismoToolStripMenuItem,
-            this.conectadoToolStripMenuItem});
+            this.conectadoToolStripMenuItem,
+            this.conectadoToolStripMenuItem1,
+            this.eulerCircuitoCaminoToolStripMenuItem,
+            this.hamiltonCaminosToolStripMenuItem,
+            this.coloreadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1047, 24);
@@ -1036,9 +1044,35 @@
             // conectadoToolStripMenuItem
             // 
             this.conectadoToolStripMenuItem.Name = "conectadoToolStripMenuItem";
-            this.conectadoToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.conectadoToolStripMenuItem.Text = "Conectado";
+            this.conectadoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.conectadoToolStripMenuItem.Text = "Circuito";
             this.conectadoToolStripMenuItem.Click += new System.EventHandler(this.conectadoToolStripMenuItem_Click);
+            // 
+            // conectadoToolStripMenuItem1
+            // 
+            this.conectadoToolStripMenuItem1.Name = "conectadoToolStripMenuItem1";
+            this.conectadoToolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
+            this.conectadoToolStripMenuItem1.Text = "Caminos";
+            // 
+            // eulerCircuitoCaminoToolStripMenuItem
+            // 
+            this.eulerCircuitoCaminoToolStripMenuItem.Name = "eulerCircuitoCaminoToolStripMenuItem";
+            this.eulerCircuitoCaminoToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
+            this.eulerCircuitoCaminoToolStripMenuItem.Text = "Euler (Circuito & Camino)";
+            this.eulerCircuitoCaminoToolStripMenuItem.Click += new System.EventHandler(this.eulerCircuitoCaminoToolStripMenuItem_Click);
+            // 
+            // hamiltonCaminosToolStripMenuItem
+            // 
+            this.hamiltonCaminosToolStripMenuItem.Name = "hamiltonCaminosToolStripMenuItem";
+            this.hamiltonCaminosToolStripMenuItem.Size = new System.Drawing.Size(173, 20);
+            this.hamiltonCaminosToolStripMenuItem.Text = "Hamilton (Circuito & Camino) ";
+            // 
+            // coloreadosToolStripMenuItem
+            // 
+            this.coloreadosToolStripMenuItem.Name = "coloreadosToolStripMenuItem";
+            this.coloreadosToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.coloreadosToolStripMenuItem.Text = "Coloreados";
+            this.coloreadosToolStripMenuItem.Click += new System.EventHandler(this.coloreadosToolStripMenuItem_Click);
             // 
             // EditorDeGrafos
             // 
@@ -1190,6 +1224,10 @@
         private System.Windows.Forms.ToolStripMenuItem gradoGrafoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conectadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conectadoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem eulerCircuitoCaminoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hamiltonCaminosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem coloreadosToolStripMenuItem;
     }
 }
 

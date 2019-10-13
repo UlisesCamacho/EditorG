@@ -27,6 +27,7 @@ namespace EditorDeGrafos
         private int anchoLinea;
         private Color colorLinea;
         private Nodo arriba;
+        
         #endregion
 
         #region Constructor

@@ -241,9 +241,9 @@ namespace EditorDeGrafos
         public static int[,] cambioIsomorfico(int[,] grafo, int x, int y)
         {
             
-            using (StreamWriter escribir = new StreamWriter("C:\\Users\\Ulises\\Desktop\\EditorDeGrafos\\EditorU - copia\\archivoMatricesCambio.txt"))
+            using (StreamWriter escribir = new StreamWriter("C:\\Users\\Ulises\\Desktop\\EditorU1\\archivoMatricesCambio.txt"))
             {
-
+                escribir.WriteLine("matrizCambio\n");
                 int aux;
                 aux = 0;
                 for (int i = 0; i < grafo.GetLength(0); i++)
@@ -308,7 +308,7 @@ namespace EditorDeGrafos
         {
             Nodo inicio;
             inicio = null;
-            string nombre="1";
+          
            int gradoMayor = 0;
             foreach (Nodo nodo in grafo)
             {

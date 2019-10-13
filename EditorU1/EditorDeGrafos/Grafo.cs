@@ -767,7 +767,7 @@ namespace EditorDeGrafos
             contador++;
           //  Console.Write(contador+"\n");
          
-            using (StreamWriter escribir = new StreamWriter("C:\\Users\\Ulises\\Desktop\\EditorDeGrafos\\EditorU - copia\\archivo2.txt"))
+            using (StreamWriter escribir = new StreamWriter("C:\\Users\\Ulises\\Desktop\\EditorU1\\archivo2.txt"))
             {
 
                 // escribir.WriteLine("matriz: cambio"+contador+"\n");

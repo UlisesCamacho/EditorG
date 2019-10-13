@@ -16,8 +16,8 @@ namespace EditorDeGrafos
         #endregion
 
         #region Variables de Instancia
-        private string nombre;
-        private List<Arista> aristas;
+        public string nombre;
+        public List<Arista> aristas;
         private Point pc;
         private Point pe;
         private Color colorFuera;
@@ -29,6 +29,7 @@ namespace EditorDeGrafos
         private int gradoEntrada;
         private int gradoSalida;
         private string fuente;
+       
         #endregion
 
         #region Constructor

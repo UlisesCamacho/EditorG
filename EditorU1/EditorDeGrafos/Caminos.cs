@@ -45,7 +45,7 @@ namespace EditorDeGrafos
         #region TrackBar
         private void BarVelocidad_Scroll(object sender, EventArgs e)
         {
-            this.reloj.Interval = BarVelocidad.Value * 100;
+           // this.reloj.Interval = BarVelocidad.Value * 100;
         }
         #endregion
 
@@ -71,36 +71,40 @@ namespace EditorDeGrafos
 
         private void Caminos_Load_1(object sender, EventArgs e)
         {
-            List<string> recorridoaux,apoyo;
+            List<string> recorridoaux, apoyo,inverso;
             recorridoaux = new List<string>();
+            inverso = new List<string>();
             apoyo = recorrido;
             this.Text = titulo;
-            BarVelocidad.Value = this.reloj.Interval / 100;
+            //BarVelocidad.Value = this.reloj.Interval / 100;
             int limite;
             limite = recorrido.Count;
             int contador = 0;
             string ultimo = "";
+            int contador2 = 0;
+            string ultimo2 = "";
             for (int j = 0; j < limite - 1; j++)
             {
 
                 for (int i = 0; i < limite - 1; i++)
                 {
                     recorridoaux.Add(apoyo[i + 1]);
-                    listBoxNodos.Items.Add(apoyo[i]);                  
+                    listBoxNodos.Items.Add(apoyo[i]);
+                    inverso.Add(apoyo[i]);
                 }
                 recorridoaux.Add(recorridoaux[0]);
                 apoyo = recorridoaux;
             }
-            for (int j = 0; j < limite-1 ; j++)
+            for (int j = 0; j < limite - 1; j++)
             {
 
-                for (int i = 0; i < limite-1 ; i++)
+                for (int i = 0; i < limite - 1; i++)
                 {
-                    if(i==0)
+                    if (i == 0)
                     {
                         ultimo = apoyo[i + contador].ToString();
                     }
-                    this.richTextBoxCamino.Text += apoyo[i+contador];
+                    this.richTextBoxCamino.Text += apoyo[i + contador];
                     this.richTextBoxCamino.Text += "->";
                 }
                 //this.richTextBoxCamino.Text += apoyo.Last();
@@ -109,8 +113,28 @@ namespace EditorDeGrafos
                 contador++;
             }
 
+            inverso.Reverse();
+            for (int j = 0; j < limite - 1; j++)
+            {
+
+                for (int i = 0; i < limite - 1; i++)
+                {
+                    if (i == 0)
+                    {
+                        ultimo2= inverso[i + contador2].ToString();
+                    }
+                    this.richTextBoxCamino.Text += inverso[i + contador2];
+                    this.richTextBoxCamino.Text += "->";
+                }
+                //this.richTextBoxCamino.Text += apoyo.Last();
+                this.richTextBoxCamino.Text += ultimo2;
+                this.richTextBoxCamino.Text += "\n";
+                contador2++;
+            }
+
 
         }
+        
         private void Ordenar_Click(object sender, EventArgs e)
         {
             String[] n1 = listBoxNodos.Items.Cast<string>().ToArray();
@@ -127,6 +151,7 @@ namespace EditorDeGrafos
             
             
         }
+      
     }
 }
 

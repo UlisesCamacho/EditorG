@@ -2124,7 +2124,7 @@ namespace EditorDeGrafos
                         pasos2.Add(grafo.matrizDeAdyacencia());
                         //  MessageBox.Show("Elementos en la lista" + pasos.Count.ToString());
                         // MessageBox.Show("cuantos elementos hay en el primer elemento de la lista" + pasos[0].Length.ToString());
-                        using (StreamWriter escribir = new StreamWriter("C:\\Users\\Ulises\\Desktop\\EditorDeGrafos\\EditorU - copia\\archivo1.txt"))
+                        using (StreamWriter escribir = new StreamWriter("C:\\Users\\Ulises\\Desktop\\EditorU1\\archivo1.txt"))
                         {
                             foreach (var elemento in pasos2)
                             {
@@ -2254,6 +2254,66 @@ namespace EditorDeGrafos
             {
                 MessageBox.Show("El grafo tiene un nodo aislado, por lo tanto no existe camino ni circuito", "No existe");
             }
+        }
+
+        private void eulerCircuitoCaminoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Euler euler;
+            if (!grafo.aislado()/* && !grafo.componentesSeparados()*/)//Si no tiene un nodo aislado puede que tenga circuito o camino
+            {
+                #region Circuito
+                if (grafo.gradosPares())//Si todos sus nodos son de grado par Existe circuito
+                {
+                    /**/
+                    this.recorrido = grafo.circuitoEuleriano();
+                    euler = new Euler(recorrido, "Existe el circuito", relojEuler);
+                    euler.borra_Recorrido += new Euler.Borra_Recorrido(this.redibujaGrafo);
+                    rec = 0;
+                    bandRecorrido = false;
+                    euler.Show();
+                    this.EditorDeGrafos_Paint(this, null);
+                }
+                #endregion
+
+                #region Camino
+                else
+                {
+                    if (grafo.nodosImpares() == 2)//Si tiene 2 nodos de grado impar tiene camino
+                    {
+                        this.recorrido = grafo.caminoEuleriano();
+                        /**/
+                        euler = new Euler(recorrido, "Existe el Camino", relojEuler);
+                        euler.borra_Recorrido += new Euler.Borra_Recorrido(this.redibujaGrafo);
+                        rec = 0;
+                        bandRecorrido = false;
+                        euler.Show();
+                        this.EditorDeGrafos_Paint(this, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Grafo no tiene ni camino ni circuito", "No existe");
+                    }
+                }
+                #endregion
+            }
+            else//Si tiene un nodo aislado tiene circuito y camino
+            {
+                MessageBox.Show("El grafo tiene un nodo aislado, por lo tanto no existe camino ni circuito", "No existe");
+            }
+        }
+
+        private void coloreadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Partita> colores;
+            colores = grafo.nPartita(); //Obtiene en una lista de listas para sacar los nombres de las partitas
+            grafo.DibujaGrafo(g, colores);//Se llenan los nombres de las partitas
+            if (MessageBox.Show("El número cromatico es: " + colores.Count.ToString() + "\n" + "¿Desea ver los conjuntos?", "Numero Cromatico", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Partitas partitasdlg = new Partitas(colores);//Se crea un dialogo con los nombres de las partitas
+                partitasdlg.ShowDialog();//Muestra el dialogo
+                partitasdlg.Dispose();//Borra el dialogo
+            }
+            this.EditorDeGrafos_Paint(this, null);
         }
     }
 }
